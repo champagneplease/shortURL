@@ -11,7 +11,12 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://short-url-eight-rho.vercel.app",
+      "https://short-l1dmgsn9d-champagnepleases-projects.vercel.app",
+    ],
+    credentials: true,
   }),
 );
 app.use("/", router);
