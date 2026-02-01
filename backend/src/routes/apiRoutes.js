@@ -1,10 +1,11 @@
 import express from "express";
 import { nanoid } from "nanoid";
 import Url from "../models/apiModels.js";
+import { validarURL } from "../middlewares/validarURL.js";
 
 const router = express.Router();
 
-router.post("/", async (req, res) => {
+router.post("/", validarURL, async (req, res) => {
   try {
     const { url } = req.body;
 
